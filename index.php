@@ -39,7 +39,20 @@ $tasks = [
         'success' => 'Нет'
     ]
 ];
+
+// считает количество проектов по категориям
+function getTasksCountByProjectName (array $tasks,string $projectName): int {
+    $count = 0;
+    foreach ($tasks as $val){
+        if ($val['categories'] === $projectName){
+            $count++;
+        }
+    }
+    return $count;
+}
+
 ?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -80,10 +93,10 @@ $tasks = [
 
                 <nav class="main-navigation">
                     <ul class="main-navigation__list">
-                        <?php foreach ($projectNames as $project):  ?> 
+                        <?php foreach ($projectNames as $projectName):  ?> 
                         <li class="main-navigation__list-item">
-                            <a class="main-navigation__list-item-link" href="#"><?=$project ?></a>
-                            <span class="main-navigation__list-item-count">0</span>
+                            <a class="main-navigation__list-item-link" href="#"><?=$projectName ?></a>
+                            <span class="main-navigation__list-item-count"><?=getTasksCountByProjectName($tasks,$projectName);?></span>
                         </li>
                     <?php endforeach; ?> 
                     </ul>

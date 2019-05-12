@@ -23,6 +23,7 @@ function include_template($name, array $data = []) {
     return $result;
 }
 
+// Считает количество задач в проекте
 function getTasksCountByProjectName (array $tasks,string $projectName): int {
     $count = 0;
     foreach ($tasks as $val){
@@ -33,4 +34,20 @@ function getTasksCountByProjectName (array $tasks,string $projectName): int {
     return $count;
 }
 
+// Вычисляет количество часов до конца срока выполнения задачи проекта  
+function getTimeofDeadLineTaskProject (string $date_comp):int {
+   
+    $result ='';
+    date_default_timezone_set('Asia/Krasnoyarsk');
+    $date_now = time();
+    $date_end = strtotime($date_comp);
+    if ((bool)$date_end == false) {
+        return $result;
+    }
+    $date_end = floor ($date_end/3600);
+    $date_now = floor ($date_now/3600);
+    $date_diff = $date_end - $date_now;
+    return $date_diff;
+}
+ 
 ?>

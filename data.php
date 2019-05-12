@@ -4,13 +4,13 @@ $projectNames = ["Входящие", "Учеба", "Работа", "Домашн
 $tasks = [
     [
         'task' => 'Собеседование в IT компании',
-        'date_complite' => '01.12.2018',
+        'date_complite' => '01.12.2019',
         'categories' => 'Работа',
         'success' => 'Нет'
     ],
     [
         'task' => 'Выполнить тестовое задание',
-        'date_complite' => '25.12.2018',
+        'date_complite' => '14.05.2019',
         'categories' => 'Работа',
         'success' => 'Нет'
     ],
@@ -28,13 +28,13 @@ $tasks = [
     ],
     [
         'task' => 'Купить корм для кота',
-        'date_complite' => 'Нет',
+        'date_complite' => '12.05.2019',
         'categories' => 'Домашние дела',
         'success' => 'Нет'
     ],
     [
         'task' => 'Заказать пиццу',
-        'date_complite' => 'Нет',
+        'date_complite' => '01.06.2019',
         'categories' => 'Домашние дела',
         'success' => 'Нет'
     ]

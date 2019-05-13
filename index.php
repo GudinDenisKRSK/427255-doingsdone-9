@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Krasnoyarsk');
 require_once ('functions.php');
 require_once ('data.php');
 $page_content = include_template('index.php',[

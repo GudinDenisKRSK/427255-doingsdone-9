@@ -26,7 +26,7 @@
                 <table class="tasks">
                     <?php foreach ($tasks as $task): ?>
                     <?php if ($task["success"] === 'Нет' ||  $show_complete_tasks === 1): ?>
-                    <tr class="tasks__item task <?php if ($task["success"] === 'Да'): ?>  task--completed <?php endif ?>">
+                    <tr class="tasks__item task <?php print getTaskClasses($task);?>">
                         <td class="task__select">
                             <label class="checkbox task__checkbox">
                                 <input class="checkbox__input visually-hidden" type="checkbox" 
@@ -39,6 +39,7 @@
                         <td class="task__date"> <?=htmlspecialchars($task["date_complite"]); ?> </td>
                         <td class="task__date"> <?=htmlspecialchars($task["categories"]); ?></td>
                         <td class="task__controls"><a class="download-link" href="#">Home.psd</a> </td>
+                        
                     </tr>
                     <?php endif ?>
                     <?php endforeach ?>

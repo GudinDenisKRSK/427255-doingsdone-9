@@ -30,6 +30,6 @@ create table user (
 	register_at DATETIME NOT NULL DEFAULT NOW()
 );
 
-CREATE UNIQUE INDEX email ON User(email);
-CREATE UNIQUE INDEX getProject ON Project(project_name,user_id);
-CREATE INDEX doneTask ON Task(user_id,project_id);
+CREATE UNIQUE INDEX email ON user(email);
+CREATE UNIQUE INDEX getProject ON project(project_name,user_id);
+CREATE INDEX doneTask ON task(user_id,project_id);

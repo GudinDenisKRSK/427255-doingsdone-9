@@ -1,10 +1,10 @@
-CREATE DATABASE 427255—doingsdone—9
+CREATE DATABASE `427255—doingsdone—9`
   DEFAULT CHARACTER SET utf8
   DEFAULT COLLATE utf8_general_ci;
 
-USE 427255—doingsdone—9;
+USE `427255—doingsdone—9`;
 
-create table project (
+CREATE TABLE project (
 	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	project_name VARCHAR(128),
 	user_id INT UNSIGNED NOT NULL
@@ -27,7 +27,7 @@ create table user (
 	name_user VARCHAR(128) NOT NULL,
 	email VARCHAR(128) NOT NULL ,
 	password VARCHAR(255) NOT NULL,
-	register_at DATETIME NOT NULL DEFAULT NOW()
+	register_at DATETIME NOT NULL DEFAULT now()
 );
 
 CREATE UNIQUE INDEX email ON user(email);

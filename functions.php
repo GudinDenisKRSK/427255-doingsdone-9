@@ -26,8 +26,8 @@ function include_template($name, array $data = []) {
 // Считает количество задач в проекте
 function getTasksCountByProjectName (array $tasks,string $projectName): int {
     $count = 0;
-    foreach ($tasks as $val){
-        if ($val['categories'] === $projectName){
+    foreach ($tasks as $task){
+        if ($task['project'] === $projectName){
             $count++;
         }
     }
@@ -35,11 +35,11 @@ function getTasksCountByProjectName (array $tasks,string $projectName): int {
 }
 
 // Вычисляет количество часов до конца срока выполнения задачи проекта  
-function getTimeofDeadLineTaskProject (string $date_comp):int {
+function getTimeofDeadLineTaskProject (string $done_at):int {
    
     $result ='';
     $date_now = time();
-    $date_end = strtotime($date_comp);
+    $date_end = strtotime($done_at);
     if ((bool)$date_end == false) {
         return $result;
     }
@@ -51,11 +51,11 @@ function getTimeofDeadLineTaskProject (string $date_comp):int {
 function getTaskClasses(array $task): string
 {
     $classes = '';
-    if ($task["success"] === 'Да') {
+    if ($task["status"] === 1) {
         $classes .= 'task--completed ';
     }
 
-    if ((getTimeofDeadLineTaskProject($task["date_complite"])) <= 24) {
+    if ((getTimeofDeadLineTaskProject($task["done_at"])) <= 24) {
         $classes .= 'task--important';
     }
 

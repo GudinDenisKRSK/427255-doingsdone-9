@@ -25,19 +25,19 @@
 
                 <table class="tasks">
                     <?php foreach ($tasks as $task): ?>
-                    <?php if ($task["success"] === 'Нет' ||  $show_complete_tasks === 1): ?>
+                    <?php if ($task["status"] === '0' ||  $show_complete_tasks === 1): ?>
                     <tr class="tasks__item task <?php print getTaskClasses($task);?>">
                         <td class="task__select">
                             <label class="checkbox task__checkbox">
                                 <input class="checkbox__input visually-hidden" type="checkbox" 
-                                <?php if ($task["success"] === 'Да'): ?> checked >
+                                <?php if ($task["status"] === '1'): ?> checked >
                                 <?php endif ?>
-                                <span class="checkbox__text"><?=htmlspecialchars($task["task"]); ?></span>
+                                <span class="checkbox__text"><?=htmlspecialchars($task["task_name"]); ?></span>
                             </label>
                         </td>
                       
-                        <td class="task__date"> <?=htmlspecialchars($task["date_complite"]); ?> </td>
-                        <td class="task__date"> <?=htmlspecialchars($task["categories"]); ?></td>
+                        <td class="task__date"> <?=htmlspecialchars($task["done_at"]); ?> </td>
+                        <td class="task__date"> <?=htmlspecialchars($task["project"]); ?></td>
                         <td class="task__controls"><a class="download-link" href="#">Home.psd</a> </td>
                         
                     </tr>

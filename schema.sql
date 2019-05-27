@@ -10,7 +10,7 @@ CREATE TABLE project (
 	user_id INT UNSIGNED NOT NULL
 );
 
-create table task (
+CREATE TABLE  task (
 	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	task_name VARCHAR(128) NOT NULL,
 	create_at DATETIME DEFAULT NOW(),
@@ -22,7 +22,7 @@ create table task (
 	status TINYINT(1) DEFAULT 0
 );
 
-create table user (
+CREATE TABLE  user (
 	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	name_user VARCHAR(128) NOT NULL,
 	email VARCHAR(128) NOT NULL ,
